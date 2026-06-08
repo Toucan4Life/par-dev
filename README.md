@@ -50,6 +50,29 @@ git commit -m "Update workspace submodules"
 git push origin HEAD
 ```
 
+## Run a File in the Extension Host
+
+After launching the `Par VS Code Extension` debug configuration, open the integrated terminal in the Extension Development Host window and run Par from the workspace root:
+
+```bash
+par-lang/target/debug/par run --package par-lang/examples HelloWorld
+```
+
+This runs `par-lang/examples/src/HelloWorld.par`. The target is the module path, not the `.par` filename, and Par uses the module's `Main` definition by default.
+
+For other files in `par-lang/examples/src`, use the same pattern:
+
+```bash
+par-lang/target/debug/par run --package par-lang/examples ModuleName
+par-lang/target/debug/par run --package par-lang/examples Nondeterminism/FanIn
+```
+
+If you `cd` into `par-lang/examples` first, the equivalent command is:
+
+```bash
+../target/debug/par run HelloWorld
+```
+
 ## Remotes
 
 The expected child-repository remote layout is:

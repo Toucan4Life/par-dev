@@ -7,8 +7,9 @@
       "request": "launch",
       "preLaunchTask": "Compile par-vscode",
       "args": [
-        "--extensionDevelopmentPath=${workspaceFolder:par-vscode}",
-        "${workspaceFolder:Par Dev}"
+        "${workspaceFolder:Par Dev}",
+        "--user-data-dir=${workspaceFolder:Par Dev}/.vscode/dev-user-data",
+        "--extensionDevelopmentPath=${workspaceFolder:par-vscode}"
       ],
       "outFiles": [
         "${workspaceFolder:par-vscode}/out/**/*.js"
