@@ -1,0 +1,6 @@
+[submodule "par-lang"]
+	path = par-lang
+	url = https://github.com/Toucan4Life/par-lang.git
+[submodule "par-vscode"]
+	path = par-vscode
+	url = https://github.com/Toucan4Life/par-vscode.git

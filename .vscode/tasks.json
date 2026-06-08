@@ -1,0 +1,98 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Initialize Par Dev Workspace",
+      "dependsOn": [
+        "Bootstrap Par Workspace",
+        "Install par-vscode dependencies",
+        "Build par-lang"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Bootstrap Par Workspace",
+      "type": "shell",
+      "command": "bash scripts/bootstrap.sh",
+      "options": {
+        "cwd": "${workspaceFolder:Par Dev}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Install par-vscode dependencies",
+      "type": "shell",
+      "command": "npm ci",
+      "options": {
+        "cwd": "${workspaceFolder:par-vscode}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Compile par-vscode",
+      "type": "shell",
+      "command": "npm run compile",
+      "options": {
+        "cwd": "${workspaceFolder:par-vscode}"
+      },
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Watch par-vscode",
+      "type": "shell",
+      "command": "npm run watch",
+      "isBackground": true,
+      "options": {
+        "cwd": "${workspaceFolder:par-vscode}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Verify par-vscode package",
+      "type": "shell",
+      "command": "npm run vsce:verify",
+      "options": {
+        "cwd": "${workspaceFolder:par-vscode}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build par-lang",
+      "type": "shell",
+      "command": "cargo build --verbose",
+      "options": {
+        "cwd": "${workspaceFolder:par-lang}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$rustc"
+      ]
+    },
+    {
+      "label": "Test par-lang",
+      "type": "shell",
+      "command": "cargo test --verbose",
+      "options": {
+        "cwd": "${workspaceFolder:par-lang}"
+      },
+      "group": "test",
+      "problemMatcher": [
+        "$rustc"
+      ]
+    },
+    {
+      "label": "Format-check par-lang",
+      "type": "shell",
+      "command": "cargo fmt --check",
+      "options": {
+        "cwd": "${workspaceFolder:par-lang}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

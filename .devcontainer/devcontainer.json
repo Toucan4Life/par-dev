@@ -1,0 +1,24 @@
+{
+  "name": "Par Dev",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "node",
+  "updateRemoteUserUID": true,
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/Par_dev,type=bind,consistency=cached",
+  "workspaceFolder": "/workspaces/Par_dev",
+  "containerEnv": {
+    "CARGO_TERM_COLOR": "always"
+  },
+  "postCreateCommand": "bash scripts/bootstrap.sh --post-create",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}

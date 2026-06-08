@@ -1,0 +1,6 @@
+.DS_Store
+*.code-workspace.user
+/par-lang/target
+/par-vscode/node_modules
+/par-vscode/out
+/par-vscode/*.vsix

@@ -1,0 +1,35 @@
+{
+  "folders": [
+    {
+      "name": "Par Dev",
+      "path": "."
+    },
+    {
+      "name": "par-lang",
+      "path": "par-lang"
+    },
+    {
+      "name": "par-vscode",
+      "path": "par-vscode"
+    }
+  ],
+  "settings": {
+    "par.path": "/workspaces/Par_dev/par-lang/target/debug/par",
+    "files.exclude": {
+      "**/.DS_Store": true,
+      "**/node_modules": true,
+      "**/target": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/target": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "rust-lang.rust-analyzer",
+      "vadimcn.vscode-lldb",
+      "dbaeumer.vscode-eslint"
+    ]
+  }
+}
