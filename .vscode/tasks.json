@@ -40,6 +40,15 @@
       "problemMatcher": []
     },
     {
+      "label": "Prepare F5 Launch",
+      "dependsOn": [
+        "Build par-lang",
+        "Compile par-vscode"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
       "label": "Watch par-vscode",
       "type": "shell",
       "command": "npm run watch",

@@ -5,7 +5,7 @@
       "name": "Par VS Code Extension",
       "type": "extensionHost",
       "request": "launch",
-      "preLaunchTask": "Compile par-vscode",
+      "preLaunchTask": "Prepare F5 Launch",
       "args": [
         "${workspaceFolder:Par Dev}",
         "--user-data-dir=${workspaceFolder:Par Dev}/.vscode/dev-user-data",
